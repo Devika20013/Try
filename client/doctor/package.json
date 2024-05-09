@@ -16,7 +16,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "npm audit fix --force && react-scripts build",
+    "build": "npm audit fix  && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
