@@ -63,9 +63,11 @@ app.post('/login',(req,res)=>{
         }
     })
 })
-app.get('/ra',(req,res)=>{
-    res.json(req.body);
-})
+app.get('/ra', (req, res) => {
+    // Accessing query parameters
+    const data = req.query;
+    res.json(data);
+});
 
 app.listen(3001, () => {
     console.log("server running")
