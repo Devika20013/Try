@@ -63,6 +63,9 @@ app.post('/login',(req,res)=>{
         }
     })
 })
+app.get('/ra',(req,res)=>{
+    res.json(req.body);
+})
 
 app.listen(3001, () => {
     console.log("server running")
