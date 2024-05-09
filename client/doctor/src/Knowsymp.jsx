@@ -48,7 +48,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Saw from './Saw.jsx';
-
+const baseurl = "https://avi-g9gp.onrender.com";
 const Knowsymp = () => {
   const [email, setEmail] = useState('');
   const [data, setData] = useState(null);
@@ -56,7 +56,7 @@ const Knowsymp = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post('http://localhost:3001/need', { email })
+    axios.post('${baseurl}/need', { email })
       .then(result => {
         if (result.data.length === 0) {
           console.log('Patient not found');

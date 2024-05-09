@@ -3,7 +3,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+const baseurl = "https://avi-g9gp.onrender.com";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -12,7 +12,7 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:3001/login", { email, password })
+      .post("${baseurl}/login", { email, password })
       .then((result) => {
         console.log(result);
         if (result.data === "Success") {

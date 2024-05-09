@@ -125,6 +125,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
+const baseurl = "https://avi-g9gp.onrender.com";
 const Symptoms = () => { // Receive props
   const location = useLocation();
   const  email  =location.state.email; // Destructure props to get email
@@ -135,7 +136,7 @@ const Symptoms = () => { // Receive props
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:3001/symptoms", { email, symptoms, medicines })
+      .post("${baseurl}/symptoms", { email, symptoms, medicines })
       .then((result) => {
         console.log(result);
         nav("/Self");
