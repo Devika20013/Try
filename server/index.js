@@ -1,6 +1,5 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const cors = require('cors');
 const Patient = require('./models/Modelschema'); // Assuming Modelschema.js contains your Mongoose schema
 const app = express();
 
