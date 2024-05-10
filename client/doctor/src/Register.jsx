@@ -74,6 +74,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Login from "./Login.jsx";
 const baseurl = "https://avi-g9gp.onrender.com";
+const PORT=3001;
 const Signup = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -84,7 +85,7 @@ const Signup = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("${baseurl}/register", { name, email, phone, password })
+      .post("${baseurl}:${PORT}/register", { name, email, phone, password })
       .then((result) => {
         console.log(result);
         nav("/Login");

@@ -46,7 +46,8 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Med from './Med.jsx';
-
+const baseurl = "https://avi-g9gp.onrender.com";
+const PORT = 3001;
 const Knowmedici = () => {
   const [email, setEmail] = useState('');
   const [data, setData] = useState(null);
@@ -54,7 +55,7 @@ const Knowmedici = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post('${baseurl}/need', { email })
+    axios.post('${baseurl}:${PORT}/need', { email })
       .then(result => {
         if (result.data.length === 0) {
           console.log('Patient not found');
