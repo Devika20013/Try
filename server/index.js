@@ -5,8 +5,14 @@ const Patient = require('./models/Modelschema'); // Assuming Modelschema.js cont
 const app = express();
 
 app.use(express.json());
-app.use(cors());
-
+// app.use(cors());
+const cors = require('cors')
+const corsOption = {
+    origin: ['http://localhost:3000'],
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE"],
+}
+app.use(cors(corsOption));
 mongoose.connect("mongodb+srv://222devika:SiriDevi91@cluster0.m4md1h8.mongodb.net/")
     .then(() => {
         console.log("database connected");
